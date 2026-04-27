@@ -1,0 +1,12 @@
+name: Validate Shell Script
+on: [push]
+
+jobs:
+  check-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Ejecutar ShellCheck
+        run: shellcheck script.sh
